@@ -1,0 +1,16 @@
+cradle:
+  cabal:
+    - path: "./src"
+      component: "lib:ptp-haskell"
+    - path: "./app"
+      component: "exe:ptp-haskell"
+    - path: "./test/SectionIA/Task27Tests.hs"
+      component: "test:all-tests"
+    - path: "./test/SectionIB/Task65Tests.hs"
+      component: "test:all-tests"
+    - path: "./test/SectionII/Task2Tests.hs"
+      component: "test:all-tests"
+    - path: "./test/runner/TestRunner.hs"
+      component: "test:all-tests"
+    - path: "./test/runner/Main.hs"
+      component: "test:all-tests"
