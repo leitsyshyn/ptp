@@ -4,6 +4,7 @@ import Data.List (isSuffixOf)
 import SectionIA.Task27Tests (sectionIATask27Tests)
 import SectionIB.Task65Tests (sectionIBTask65Tests)
 import SectionII.Task2Tests (sectionIITask2Tests)
+import SectionIII.Task11Tests (sectionIIITask11Tests)
 import System.Environment (getProgName)
 import System.Exit (exitFailure, exitSuccess)
 import TestRunner (Test, runTest, testGroup)
@@ -15,6 +16,7 @@ allTests =
     [ sectionIATask27Tests
     , sectionIBTask65Tests
     , sectionIITask2Tests
+    , sectionIIITask11Tests
     ]
 
 selectTest :: String -> Maybe Test
@@ -23,6 +25,7 @@ selectTest progName
   | "section-ia-task27-tests" `isSuffixOf` progName = Just sectionIATask27Tests
   | "section-ib-task65-tests" `isSuffixOf` progName = Just sectionIBTask65Tests
   | "section-ii-task2-tests" `isSuffixOf` progName = Just sectionIITask2Tests
+  | "section-iii-task11-tests" `isSuffixOf` progName = Just sectionIIITask11Tests
   | otherwise = Nothing
 
 main :: IO ()

@@ -1,7 +1,11 @@
 module Main where
 
 import Tasks
-  ( keepOddFrequencyElements
+  ( Automaton(..)
+  , Problem(..)
+  , Transition(..)
+  , keepOddFrequencyElements
+  , solve
   , splitIncreasingRuns
   , splitPrimeNonPrime
   )
@@ -18,6 +22,24 @@ main = do
   let sectionIATask27Input = [1, 1, 1, 2, 2, 3, 4, 4, 4, 4]
       sectionIBTask65Input = [11, 4, 5, 0, 17, 18, -3, 19, 20, 1]
       sectionIITask2Input = [5, 4, 2, 8, 3, 1, 6, 9, 5]
+      sectionIIITask11Input =
+        Problem
+          { fa =
+              Automaton
+                { qs = [0, 1, 2, 3, 4]
+                , sigma = "abc"
+                , q0 = 0
+                , fs = [4]
+                , edges =
+                    [ Transition 0 'a' 1
+                    , Transition 1 'c' 2
+                    , Transition 2 'b' 3
+                    , Transition 3 'c' 4
+                    ]
+                }
+          , v = "a"
+          , w = "b"
+          }
 
   putStrLn "PTP Haskell demo"
   putStrLn ""
@@ -34,3 +56,7 @@ main = do
     "Section II, task 2: split into maximal strictly increasing runs"
     sectionIITask2Input
     (splitIncreasingRuns sectionIITask2Input)
+  printExample
+    "Section III, task 11: accepted word of the form v y w y"
+    sectionIIITask11Input
+    (solve sectionIIITask11Input)

@@ -1,2 +1,5 @@
 /.DS_Store
+
+# Haskell build outputs
+/ptp-haskell/dist/
 /ptp-haskell/dist-newstyle/

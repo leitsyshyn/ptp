@@ -5,9 +5,10 @@ cabal-version:       >=1.10
 
 library
   hs-source-dirs:    src
-  exposed-modules:   Tasks, SectionIA.Task27, SectionIB.Task65, SectionII.Task2
+  exposed-modules:   Tasks, SectionIA.Task27, SectionIB.Task65, SectionII.Task2, SectionIII.Task11
   default-language:  Haskell2010
-  build-depends:     base >=4.18 && <5
+  build-depends:     base >=4.18 && <5,
+                     containers
 
 executable ptp-haskell
   main-is:           Main.hs
@@ -20,7 +21,7 @@ test-suite all-tests
   type:              exitcode-stdio-1.0
   main-is:           Main.hs
   hs-source-dirs:    test/runner, test
-  other-modules:     TestRunner, SectionIA.Task27Tests, SectionIB.Task65Tests, SectionII.Task2Tests
+  other-modules:     TestRunner, SectionIA.Task27Tests, SectionIB.Task65Tests, SectionII.Task2Tests, SectionIII.Task11Tests
   default-language:  Haskell2010
   build-depends:     base >=4.18 && <5,
                      ptp-haskell
@@ -29,7 +30,7 @@ test-suite section-ia-task27-tests
   type:              exitcode-stdio-1.0
   main-is:           Main.hs
   hs-source-dirs:    test/runner, test
-  other-modules:     TestRunner, SectionIA.Task27Tests, SectionIB.Task65Tests, SectionII.Task2Tests
+  other-modules:     TestRunner, SectionIA.Task27Tests, SectionIB.Task65Tests, SectionII.Task2Tests, SectionIII.Task11Tests
   default-language:  Haskell2010
   build-depends:     base >=4.18 && <5,
                      ptp-haskell
@@ -38,7 +39,7 @@ test-suite section-ib-task65-tests
   type:              exitcode-stdio-1.0
   main-is:           Main.hs
   hs-source-dirs:    test/runner, test
-  other-modules:     TestRunner, SectionIA.Task27Tests, SectionIB.Task65Tests, SectionII.Task2Tests
+  other-modules:     TestRunner, SectionIA.Task27Tests, SectionIB.Task65Tests, SectionII.Task2Tests, SectionIII.Task11Tests
   default-language:  Haskell2010
   build-depends:     base >=4.18 && <5,
                      ptp-haskell
@@ -47,7 +48,16 @@ test-suite section-ii-task2-tests
   type:              exitcode-stdio-1.0
   main-is:           Main.hs
   hs-source-dirs:    test/runner, test
-  other-modules:     TestRunner, SectionIA.Task27Tests, SectionIB.Task65Tests, SectionII.Task2Tests
+  other-modules:     TestRunner, SectionIA.Task27Tests, SectionIB.Task65Tests, SectionII.Task2Tests, SectionIII.Task11Tests
+  default-language:  Haskell2010
+  build-depends:     base >=4.18 && <5,
+                     ptp-haskell
+
+test-suite section-iii-task11-tests
+  type:              exitcode-stdio-1.0
+  main-is:           Main.hs
+  hs-source-dirs:    test/runner, test
+  other-modules:     TestRunner, SectionIA.Task27Tests, SectionIB.Task65Tests, SectionII.Task2Tests, SectionIII.Task11Tests
   default-language:  Haskell2010
   build-depends:     base >=4.18 && <5,
                      ptp-haskell
