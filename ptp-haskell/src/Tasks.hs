@@ -13,6 +13,14 @@ module Tasks
   , accepts
   , solveY
   , solve
+  , Nonterminal
+  , Terminal
+  , TerminalWord
+  , Production(..)
+  , Grammar(Grammar)
+  , MinWords(..)
+  , minlengthL
+  , wordsMinlenL
   ) where
 
 import SectionIA.Task27 (keepOddFrequencyElements)
@@ -30,5 +38,15 @@ import SectionIII.Task11
   , run
   , solve
   , solveY
+  )
+import SectionIV.Task7
+  ( Grammar(Grammar)
+  , MinWords(..)
+  , Nonterminal
+  , Production(..)
+  , Terminal
+  , TerminalWord
+  , minlengthL
+  , wordsMinlenL
   )
 import Prelude hiding (Word)
